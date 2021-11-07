@@ -2,7 +2,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 import { Escuderia } from './Escuderia';
 
 @Entity()
-export class HistorialEscuderia extends BaseEntity {
+export class EscuderiaHistorial extends BaseEntity {
 
   @PrimaryGeneratedColumn()
   id: number;
