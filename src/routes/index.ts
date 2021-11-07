@@ -9,6 +9,9 @@ import circuito from './circuito';
 import clima from './clima';
 import plataforma from './plataforma';
 import division from './division';
+import estadoCarrera from './estadoCarrera';
+import estadoEvento from './estadoEvento';
+import neumatico from './neumatico';
 
 const routes = Router();
 
@@ -22,5 +25,8 @@ routes.use('/circuitos', circuito);
 routes.use('/climas', clima);
 routes.use('/plataformas', plataforma);
 routes.use('/divisiones', division);
+routes.use('/estados-carrera', estadoCarrera);
+routes.use('/estados-evento', estadoEvento);
+routes.use('/neumaticos', neumatico);
 
 export default routes;
