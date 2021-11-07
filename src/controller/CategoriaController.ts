@@ -6,7 +6,7 @@ import { catchAsync } from '../utils/catchAsync';
 export class CategoriaController {
 
   static getAll = catchAsync(async (req: Request, res: Response) => {
-    const categorias = await Categoria.find();
+    const categorias = await Categoria.find({ order: { id: 'ASC' } });
     if (categorias.length > 0) {
       res.send(categorias);
     } else {

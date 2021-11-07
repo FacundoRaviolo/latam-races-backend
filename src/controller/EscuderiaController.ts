@@ -4,12 +4,11 @@ import { validate } from 'class-validator';
 import { catchAsync } from '../utils/catchAsync';
 import { Pais } from '../entity/Pais';
 import { Categoria } from '../entity/Categoria';
-import { HistorialEscuderia } from '../entity/HistorialEscuderia';
 
 export class EscuderiaController {
 
   static getAll = catchAsync(async (req: Request, res: Response) => {
-    const escuderias = await Escuderia.find();
+    const escuderias = await Escuderia.find({ order: { id: 'ASC' } });
     if (escuderias.length > 0) {
       res.send(escuderias);
     } else {

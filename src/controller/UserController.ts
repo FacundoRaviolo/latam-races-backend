@@ -6,7 +6,7 @@ import { catchAsync } from '../utils/catchAsync';
 export class UserController {
 
   static getAll = catchAsync(async (req: Request, res: Response) => {
-    const users = await User.find();
+    const users = await User.find({ order: { id: 'ASC' } });
     if (users.length > 0) {
       res.send(users);
     } else {
