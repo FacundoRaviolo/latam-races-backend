@@ -23,11 +23,9 @@ export class Division extends BaseEntity {
   @ManyToOne(() => Plataforma, { eager: true })
   plataforma: Plataforma;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 

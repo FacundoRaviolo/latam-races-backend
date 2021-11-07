@@ -27,11 +27,9 @@ export class Escuderia extends BaseEntity {
   @ManyToOne(() => Categoria, { nullable: true, eager: true })
   categoria: Categoria;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 

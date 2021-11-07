@@ -19,11 +19,9 @@ export class Circuito extends BaseEntity {
   @ManyToOne(() => Pais, { eager: true })
   pais: Pais;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 

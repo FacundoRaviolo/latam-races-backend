@@ -15,11 +15,9 @@ export class Pais extends BaseEntity {
   @Column({ nullable: true })
   codigo: string;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 

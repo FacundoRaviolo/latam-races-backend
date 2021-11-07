@@ -28,11 +28,9 @@ export class EscuderiaHistorial extends BaseEntity {
   @ManyToOne(() => Escuderia, escuderia => escuderia.historial, { orphanedRowAction: 'delete' })
   escuderia: Escuderia;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 
