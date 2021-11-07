@@ -1,7 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BaseEntity, ManyToOne, OneToMany } from 'typeorm';
 import { Pais } from './Pais';
 import { Categoria } from './Categoria';
-import { HistorialEscuderia } from './HistorialEscuderia';
+import { EscuderiaHistorial } from './EscuderiaHistorial';
 
 @Entity()
 export class Escuderia extends BaseEntity {
@@ -18,8 +18,8 @@ export class Escuderia extends BaseEntity {
   @Column({ nullable: true })
   escudo: string;
 
-  @OneToMany(() => HistorialEscuderia, historial => historial.escuderia, { eager: true, cascade: true })
-  historial: HistorialEscuderia[];
+  @OneToMany(() => EscuderiaHistorial, historial => historial.escuderia, { eager: true, cascade: true })
+  historial: EscuderiaHistorial[];
 
   @ManyToOne(() => Pais, { nullable: true, eager: true })
   nacionalidad: Pais;
