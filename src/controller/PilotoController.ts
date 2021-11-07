@@ -30,7 +30,9 @@ export class PilotoController {
     piloto.fechaRegistro = fechaRegistro;
     piloto.ciudad = ciudad;
     piloto.provincia = provincia;
-    piloto.nacionalidad = await Pais.findOneOrFail(nacionalidad);
+    if (nacionalidad) {
+      piloto.nacionalidad = await Pais.findOneOrFail({ id: nacionalidad });
+    }
     const errors = await validate(piloto);
     if (errors.length > 0) {
       return res.status(400).json(errors);
@@ -61,7 +63,9 @@ export class PilotoController {
     piloto.fechaRegistro = fechaRegistro;
     piloto.ciudad = ciudad;
     piloto.provincia = provincia;
-    piloto.nacionalidad = await Pais.findOneOrFail(nacionalidad);
+    if (nacionalidad) {
+      piloto.nacionalidad = await Pais.findOneOrFail({ id: nacionalidad });
+    }
     const errors = await validate(piloto);
     if (errors.length > 0) {
       return res.status(400).json(errors);

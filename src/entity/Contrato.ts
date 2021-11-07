@@ -1,20 +1,25 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BaseEntity, ManyToOne } from 'typeorm';
+import { Piloto } from './Piloto';
 import { Escuderia } from './Escuderia';
+import { Temporada } from './Temporada';
 
 @Entity()
-export class EscuderiaHistorial extends BaseEntity {
+export class Contrato extends BaseEntity {
 
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  nombre: string;
+  @ManyToOne(() => Piloto, { eager: true })
+  piloto: Piloto;
+
+  @ManyToOne(() => Escuderia, { eager: true })
+  escuderia: Escuderia;
 
   @Column({ nullable: true })
-  nombreCompleto: string;
+  numero: number;
 
   @Column({ nullable: true })
-  colorPrimario: string;
+  foto: string;
 
   @Column({ type: 'date' })
   fechaInicio: Date;
@@ -23,10 +28,10 @@ export class EscuderiaHistorial extends BaseEntity {
   fechaFin: Date;
 
   @Column({ default: true })
-  activo: Boolean
+  activo: Boolean;
 
-  @ManyToOne(() => Escuderia, escuderia => escuderia.historial, { orphanedRowAction: 'delete', onDelete: 'CASCADE' })
-  escuderia: Escuderia;
+  @ManyToOne(() => Temporada, { eager: true })
+  temporada: Temporada;
 
   @CreateDateColumn()
   createdAt: Date;
