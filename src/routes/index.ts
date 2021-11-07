@@ -12,6 +12,10 @@ import division from './division';
 import estadoCarrera from './estadoCarrera';
 import estadoEvento from './estadoEvento';
 import neumatico from './neumatico';
+import tipoSesion from './tipoSesion';
+import temporada from './temporada';
+import evento from './evento';
+import contrato from './contrato';
 
 const routes = Router();
 
@@ -28,5 +32,9 @@ routes.use('/divisiones', division);
 routes.use('/estados-carrera', estadoCarrera);
 routes.use('/estados-evento', estadoEvento);
 routes.use('/neumaticos', neumatico);
+routes.use('/tipos-sesion', tipoSesion);
+routes.use('/temporadas', temporada);
+routes.use('/eventos', evento);
+routes.use('/contratos', contrato);
 
 export default routes;
