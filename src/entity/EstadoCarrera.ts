@@ -12,11 +12,9 @@ export class EstadoCarrera extends BaseEntity {
   @Column({ nullable: true })
   descripcion: string;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 

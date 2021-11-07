@@ -22,11 +22,9 @@ export class Neumatico extends BaseEntity {
   @ManyToOne(() => Categoria, { eager: true })
   categoria: Categoria;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 

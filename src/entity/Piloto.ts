@@ -44,11 +44,9 @@ export class Piloto extends BaseEntity {
   @ManyToOne(() => Pais, { eager: true })
   nacionalidad: Pais;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 

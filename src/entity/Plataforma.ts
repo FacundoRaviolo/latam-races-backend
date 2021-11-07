@@ -15,11 +15,9 @@ export class Plataforma extends BaseEntity {
   @Column({ nullable: true })
   logo: string;
 
-  @Column()
   @CreateDateColumn()
   createdAt: Date;
 
-  @Column()
   @UpdateDateColumn()
   updatedAt: Date;
 
