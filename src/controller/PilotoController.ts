@@ -7,7 +7,7 @@ import { Pais } from '../entity/Pais';
 export class PilotoController {
 
   static getAll = catchAsync(async (req: Request, res: Response) => {
-    const pilotos = await Piloto.find();
+    const pilotos = await Piloto.find({ order: { id: 'ASC' } });
     if (pilotos.length > 0) {
       res.send(pilotos);
     } else {

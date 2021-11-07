@@ -6,7 +6,7 @@ import { catchAsync } from '../utils/catchAsync';
 export class PaisController {
 
   static getAll = catchAsync(async (req: Request, res: Response) => {
-    const paises = await Pais.find();
+    const paises = await Pais.find({ order: { id: 'ASC' } });
     if (paises.length > 0) {
       res.send(paises);
     } else {
