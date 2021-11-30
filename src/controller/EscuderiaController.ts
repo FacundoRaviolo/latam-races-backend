@@ -4,6 +4,7 @@ import { validate } from 'class-validator';
 import { catchAsync } from '../utils/catchAsync';
 import { Pais } from '../entity/Pais';
 import { Categoria } from '../entity/Categoria';
+import { getRepository } from 'typeorm';
 
 export class EscuderiaController {
 
@@ -62,6 +63,13 @@ export class EscuderiaController {
     let escuderia = await Escuderia.findOneOrFail(id);
     escuderia.remove();
     res.status(200).json({ message: 'Escuderia eliminada' });
+  });
+
+  static getHistorial = catchAsync(async (req: Request, res: Response) => {
+    const { id } = req.params;
+    const escuderia = await Escuderia.findOneOrFail(id);
+    const historial = await escuderia.historial;
+    res.send(historial);
   });
 
 }

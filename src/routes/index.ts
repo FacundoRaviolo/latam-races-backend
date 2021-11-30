@@ -16,6 +16,7 @@ import tipoSesion from './tipoSesion';
 import temporada from './temporada';
 import evento from './evento';
 import contrato from './contrato';
+import motivoPenalizacion from './motivoPenalizacion';
 
 const routes = Router();
 
@@ -36,5 +37,6 @@ routes.use('/tipos-sesion', tipoSesion);
 routes.use('/temporadas', temporada);
 routes.use('/eventos', evento);
 routes.use('/contratos', contrato);
+routes.use('/motivos-penalizacion', motivoPenalizacion);
 
 export default routes;

@@ -22,16 +22,16 @@ export class Temporada extends BaseEntity {
   @ManyToOne(() => Division, { eager: true })
   division: Division;
 
-  @ManyToMany(() => Piloto, { eager: true })
+  @ManyToMany(() => Piloto)
   @JoinTable({ name: 'temporada_pilotos' })
   pilotos: Piloto[];
 
-  @ManyToMany(() => Escuderia, { eager: true })
+  @ManyToMany(() => Escuderia)
   @JoinTable({ name: 'temporada_escuderias' })
   escuderias: Escuderia[];
 
-  @OneToMany(() => Evento, evento => evento.temporada, { eager: true })
-  eventos: Evento[];
+  @OneToMany(() => Evento, evento => evento.temporada)
+  eventos: Promise<Evento[]>;
 
   @CreateDateColumn()
   createdAt: Date;

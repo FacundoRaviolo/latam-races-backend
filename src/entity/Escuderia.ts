@@ -18,8 +18,8 @@ export class Escuderia extends BaseEntity {
   @Column({ nullable: true })
   escudo: string;
 
-  @OneToMany(() => EscuderiaHistorial, historial => historial.escuderia, { eager: true, cascade: true })
-  historial: EscuderiaHistorial[];
+  @OneToMany(() => EscuderiaHistorial, historial => historial.escuderia, { cascade: true })
+  historial: Promise<EscuderiaHistorial[]>;
 
   @ManyToOne(() => Pais, { nullable: true, eager: true })
   nacionalidad: Pais;

@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, BaseEntity, ManyToOne } from 'typeorm';
 import { TipoPenalizacion } from './TipoPenalizacion';
 import { DetalleSesion } from './DetalleSesion';
+import { MotivoPenalizacion } from './MotivoPenalizacion';
 
 @Entity()
 export class Penalizacion extends BaseEntity {
@@ -8,8 +9,8 @@ export class Penalizacion extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: true })
-  motivo: string;
+  @ManyToOne(() => MotivoPenalizacion, { nullable: true, eager: true })
+  motivo: MotivoPenalizacion;
 
   @Column({ nullable: true })
   tiempo: number;

@@ -10,4 +10,6 @@ router.get('/:id', EscuderiaController.getById);
 router.patch('/:id', EscuderiaController.edit);
 router.delete('/:id', EscuderiaController.delete);
 
+router.get('/:id/historial', EscuderiaController.getHistorial);
+
 export default router;
