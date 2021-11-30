@@ -7,14 +7,14 @@ export class EscuderiaHistorial extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  nombre: string;
-
   @Column({ nullable: true })
   nombreCompleto: string;
 
   @Column({ nullable: true })
   colorPrimario: string;
+
+  @Column({ nullable: true })
+  livery: string;
 
   @Column({ type: 'date' })
   fechaInicio: Date;

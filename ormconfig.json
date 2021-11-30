@@ -4,7 +4,7 @@
    "port": 3306,
    "username": "root",
    "password": "r00t@2o2o_sqL",
-   "database": "latam-races",
+   "database": "latamraces",
    "synchronize": true,
    "logging": false,
    "entities": [

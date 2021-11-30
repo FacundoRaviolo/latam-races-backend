@@ -19,8 +19,8 @@ export class Sesion extends BaseEntity {
   @ManyToOne(() => Clima, { eager: true })
   clima: Clima;
 
-  @OneToMany(() => DetalleSesion, detalleSesion => detalleSesion.sesion, { eager: true, cascade: true })
-  detalles: DetalleSesion[];
+  @OneToMany(() => DetalleSesion, detalleSesion => detalleSesion.sesion, { cascade: true })
+  detalles: Promise<DetalleSesion[]>;
 
   @ManyToOne(() => Evento, evento => evento.sesiones, { orphanedRowAction: 'delete', onDelete: 'CASCADE' })
   evento: Evento;
